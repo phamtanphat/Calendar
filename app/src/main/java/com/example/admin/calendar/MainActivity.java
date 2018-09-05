@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -19,11 +20,13 @@ public class MainActivity extends AppCompatActivity {
         long phut = calendar.get(Calendar.MINUTE);
         long giay = calendar.get(Calendar.SECOND);
         long ngay = calendar.get(Calendar.DAY_OF_YEAR);
-        Log.d("BBB",ngay + "");
+//        Log.d("BBB",ngay + "");
         Date tgianhientai = calendar.getTime();
         long time = System.currentTimeMillis();
 //        Log.d("BBB","Gio " + gio + " Phut " + phut + " Giay " + giay);
-//        Log.d("BBB",time + "");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-y");
+        String tgian = simpleDateFormat.format(time);
+        Log.d("BBB",tgian + "");
 
     }
 }
